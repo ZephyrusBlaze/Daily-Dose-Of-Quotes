@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Daily Dose of Quotes</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta property="og:title" content="Daily Dose of Quotes" />
+
+    <meta property="og:description" content="A positive mindset is the key to unlocking unlimited potential." />
+
+    <meta property="og:image"
+        content="https://raw.githubusercontent.com/TheStrange-007/Daily-Dose-Of-Quotes/main/assets/images/og_image.png" />
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="ring">Loading
+        <span></span>
+    </div>
+
+    <div id="quote-container">
+        <img id="background-image" src="" alt="Random Image" style="display: none;">
+        <!-- hiding the image tag when the loading screen is being displayed -->
+        <div id="quote-box" style="opacity: 0;">
+            <div id="quote"></div>
+            <div id="author"></div>
+        </div>
+    </div>
+
+    <audio id="background-audio" src="assets/sounds/nature.webm" loop></audio>
+
+    <!-- Music toggle button -->
+    <button id="sound-toggle-button" class="sound-toggle" onclick="toggleAudio()" style="display: none;">
+        <svg id="sound-off-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-volume-mute" viewBox="0 0 16 16" id="IconChangeColor">
+            <path
+                d="M6.717 3.55A.5.5 0 0 1 7 4v8a.5.5 0 0 1-.812.39L3.825 10.5H1.5A.5.5 0 0 1 1 10V6a.5.5 0 0 1 .5-.5h2.325l2.363-1.89a.5.5 0 0 1 .529-.06zM6 5.04 4.312 6.39A.5.5 0 0 1 4 6.5H2v3h2a.5.5 0 0 1 .312.11L6 10.96V5.04zm7.854.606a.5.5 0 0 1 0 .708L12.207 8l1.647 1.646a.5.5 0 0 1-.708.708L11.5 8.707l-1.646 1.647a.5.5 0 0 1-.708-.708L10.793 8 9.146 6.354a.5.5 0 1 1 .708-.708L11.5 7.293l1.646-1.647a.5.5 0 0 1 .708 0z"
+                id="mainIconPathAttribute"></path>
+        </svg>
+
+        <svg id="sound-on-icon" xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor"
+            class="bi bi-volume-down" viewBox="0 0 16 16" id="IconChangeColor" style="display: none;">
+            <path
+                d="M9 4a.5.5 0 0 0-.812-.39L5.825 5.5H3.5A.5.5 0 0 0 3 6v4a.5.5 0 0 0 .5.5h2.325l2.363 1.89A.5.5 0 0 0 9 12V4zM6.312 6.39 8 5.04v5.92L6.312 9.61A.5.5 0 0 0 6 9.5H4v-3h2a.5.5 0 0 0 .312-.11zM12.025 8a4.486 4.486 0 0 1-1.318 3.182L10 10.475A3.489 3.489 0 0 0 11.025 8 3.49 3.49 0 0 0 10 5.525l.707-.707A4.486 4.486 0 0 1 12.025 8z"
+                id="mainIconPathAttribute"></path>
+        </svg>
+    </button>
+
+    <!-- Script for music toggle button -->
+    <script>
+        // decreasing volume so it's not too loud
+        window.addEventListener("DOMContentLoaded", function () {
+            var audio = document.getElementById("background-audio");
+            audio.volume = 0.5;
+        });
+
+        function toggleAudio() {
+            var audio = document.getElementById("background-audio");
+            var soundOffIcon = document.getElementById("sound-off-icon");
+            var soundOnIcon = document.getElementById("sound-on-icon");
+
+            if (audio.paused) {
+                audio.play();
+                soundOffIcon.style.display = "none";
+                soundOnIcon.style.display = "inline";
+            } else {
+                audio.pause();
+                soundOffIcon.style.display = "inline";
+                soundOnIcon.style.display = "none";
+            }
+        }
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
