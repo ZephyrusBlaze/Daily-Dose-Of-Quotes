@@ -17,7 +17,7 @@ This repository houses the code for a web application that provides you with a d
 2. Enjoy the uplifting quotes along with visually appealing background images.
 3. Toggle the background music on/off with the sound icon button.
 
-- Alternatively, view the website on [GitHub Pages](https://thestrange-007.github.io/Daily-Dose-Of-Quotes/).
+- Alternatively, view the website on [GitHub Pages](https://ZephyrusBlaze.github.io/Daily-Dose-Of-Quotes/).
 
 ## Customize Your Experience
 - Add query parameters to the URL for a personalized experience:
